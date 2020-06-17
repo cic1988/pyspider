@@ -52,7 +52,7 @@ class QuitableFlask(Flask):
         use_debugger = self.debug
 
         if use_debugger:
-            from werkzeug.debug import DebuggedApplication
+            from werkzeug.middleware.dispatcher import DispatcherMiddleware
             application = DebuggedApplication(application, True)
 
         try:
